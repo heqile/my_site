@@ -1,0 +1,10 @@
+{% extends 'base_templates/base_content_page.html' %}
+
+{% block content %}
+<h1>{{ post.post_title }}</h1>
+<p> {{ post.post_content }} </p>
+<div>Created on: {{ post.published_date }}</div> <div>Modified on: {{ post.modified_date }}</div>
+<a href="{% url 'my_blog:delete' post.id %}">Delete</a>
+<a href="{% url 'my_blog:edit' post.id %}">Edit</a>
+<a href="{% url 'my_blog:list' %}">Back</a>
+{% endblock %}

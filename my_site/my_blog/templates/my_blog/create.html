@@ -1,0 +1,11 @@
+{% extends 'base_templates/base_content_page.html' %}
+
+{% block content %}
+<h1>New Post</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" name="create" value="Submit"/>
+</form>
+<a href="{% url 'my_blog:list' %}">Cancel</a>
+{% endblock %}

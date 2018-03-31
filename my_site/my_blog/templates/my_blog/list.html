@@ -1,0 +1,15 @@
+{% extends 'base_templates/base_content_page.html' %}
+
+{% block content %}
+<a href="{% url 'my_blog:create' %}">Create a new post</a>
+<ul>
+    {% for post in post_list %}
+    <li>
+        <h2>{{ post.post_title }}</h2>
+        <p>{{ post.post_content|truncatechars:255 }}</p>
+        <div>Created on: {{ post.published_date }}</div> <div>Modified on: {{ post.modified_date }}</div>
+        <a href="{% url 'my_blog:detail' post.id %}">Detail</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
