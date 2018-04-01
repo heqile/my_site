@@ -8,5 +8,7 @@ urlpatterns = [
     path('create/', views.CreateView.as_view(), name='create'),
     path('<int:pk>/delete/', views.DeleteView.as_view(), name='delete'),
     path('<int:pk>/edit/', views.EditView.as_view(), name='edit'),
+    path('login/', views.LoginView.as_view(), name='login'),
+    path('logout/', views.LogoutView.as_view(), name='logout'),
     re_path(r'^.*$', views.index, name='index')
 ]

@@ -3,6 +3,7 @@ from .models import Post
 from django.urls import reverse_lazy
 from django.utils import timezone
 from django.shortcuts import render
+from django.contrib.auth import views
 
 
 def index(request):
@@ -47,3 +48,13 @@ class DeleteView(generic.DeleteView):
     model = Post
     template_name = 'my_blog/delete.html'
     success_url = reverse_lazy('my_blog:list')
+
+
+class LoginView(views.LoginView):
+
+    template_name = 'my_blog/login.html'
+
+
+class LogoutView(views.LogoutView):
+    
+    template_name = 'my_blog/logout.html'

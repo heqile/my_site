@@ -1,0 +1,12 @@
+{% extends 'base_templates/base_content_page.html' %}
+
+{% block title %}
+<h1>Logged out</h1>
+{% endblock %}
+
+{% block content %}
+<h2>You have logged out.</h2>
+<a href="{% url 'my_blog:index' %}">Home page</a>
+</br>
+<a href="{% url 'my_blog:login' %}">Log in</a>
+{% endblock %}
